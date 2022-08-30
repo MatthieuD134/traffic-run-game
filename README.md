@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-cd traffic-run-game
+cd vanilla-typescript-starter
 yarn install
 ```
 
