@@ -1,0 +1,29 @@
+{
+	"plugins": ["@typescript-eslint", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"root": true,
+	"settings": {
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true
+			}
+		}
+	},
+	"rules": {
+		"prettier/prettier": ["error"],
+		"@typescript-eslint/no-unused-vars": "error",
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-var-requires": 0
+	},
+	"env": {
+		"browser": true,
+		"amd": true,
+		"node": true
+	},
+	"ignorePatterns": ["public/static/bundle/*"] // ignore eslint rule for the bundle folder, where typescript is being compiled into js
+}
