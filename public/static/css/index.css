@@ -10,6 +10,10 @@ body {
   text-align: center;
 }
 
+h1 {
+  color: #25925c;
+}
+
 section {
   margin-top: 2rem;
 }
@@ -23,6 +27,12 @@ button {
 button:hover {
   background-color: #262626;
   color: #fff;
+}
+
+@media (min-width: 992px) {
+  body {
+    text-align: start;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

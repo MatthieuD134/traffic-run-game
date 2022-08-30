@@ -1,3 +1,5 @@
+@import "./config/_index.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +10,10 @@ body {
   font-family: monospace;
   font-size: 1rem;
   text-align: center;
+}
+
+h1 {
+  color: map-get($theme, txt-secundary);
 }
 
 section {
@@ -23,4 +29,10 @@ button {
 button:hover {
   background-color: #262626;
   color: #fff;
+}
+
+@include responsive('medium') {
+  body {
+    text-align: start;
+  }
 }
