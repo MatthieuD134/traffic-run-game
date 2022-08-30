@@ -9,4 +9,5 @@ module.exports = {
 	'!(public/static/bundle/**/*)*.{js,jsx,ts,tsx}': [buildEslintCommand],
 	'!(public/static/bundle/**/*)*.{md,json,html,js,jsx,ts,tsx}':
 		'./node_modules/.bin/prettier --write',
+	'**/*.{css,scss}': './node_modules/.bin/stylelint --fix',
 };

@@ -1,4 +1,6 @@
-@import "./config/_index.scss";
+// import the map function from sass
+@use "sass:map";
+@import "./config/index";
 
 * {
   box-sizing: border-box;
@@ -13,7 +15,7 @@ body {
 }
 
 h1 {
-  color: map-get($theme, txt-secundary);
+  color: map.get($theme, txt-secundary);
 }
 
 section {
@@ -31,7 +33,7 @@ button:hover {
   color: #fff;
 }
 
-@include responsive('medium') {
+@include responsive("medium") {
   body {
     text-align: start;
   }
