@@ -1,9 +1,9 @@
-# Vanilla Typescript App
+# Simple traffic Run Game with Three.js and typescript
 
 ## Installation
 
 ```
-cd vanilla-typescript-starter
+cd traffic-run-game
 yarn install
 ```
 
@@ -15,4 +15,4 @@ yarn start
 
 ## Notes
 
-This project is a base repository for vanilla Typescript projects
+This is a simple game using Three.js and typescript

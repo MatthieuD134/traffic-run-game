@@ -1,36 +1,22 @@
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-body {
+#score-container {
   font-family: monospace;
-  font-size: 1rem;
+  position: fixed;
+  z-index: 100;
+  bottom: 5vh;
+  width: 300px;
+  left: calc(50vw - 150px);
   text-align: center;
-}
-
-h1 {
-  color: #92257e;
-}
-
-section {
-  margin-top: 2rem;
-}
-
-button {
-  border: none;
-  outline: none;
-  padding: 0.3rem 0.5rem;
-}
-
-button:hover {
-  background-color: #262626;
-  color: #fff;
-}
-
-@media (min-width: 992px) {
-  body {
-    text-align: start;
-  }
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
 }
