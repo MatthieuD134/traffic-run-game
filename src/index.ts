@@ -107,6 +107,7 @@ function reset() {
 	resetPlayerAngle();
 	movePlayerCar(playerCar, 0, accelerate, decelerate);
 	score = 0;
+	scoreSpanElement.innerText = '0';
 	lastTimestamp = undefined;
 
 	// Remove other vehicles
