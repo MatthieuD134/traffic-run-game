@@ -164,45 +164,44 @@ function animation(timestamp: number) {
 function getHitZonPosition(
 	center: THREE.Vector3,
 	angle: number,
-	clockwise: boolean,
 	distance: number
 ) {
-	const directionAngle = clockwise ? angle - Math.PI / 2 : angle + Math.PI / 2;
+	const directionAngle = angle + Math.PI / 2;
 	return {
-		x: center.x + Math.cos(directionAngle) * distance,
+		x: center.x - Math.cos(directionAngle) * distance,
 		y: center.y + Math.sin(directionAngle) * distance,
 	};
 }
 
 function hitDetection() {
+	// Front of vehicle
 	const playerHitZone1 = getHitZonPosition(
 		playerCar.position,
 		getPlayerAngle(),
-		true,
-		15
+		-15
 	);
 
+	// Back of vehicle
 	const playerHitZone2 = getHitZonPosition(
 		playerCar.position,
 		getPlayerAngle(),
-		true,
-		-15
+		15
 	);
 
 	const hit = botVehicles.some((vehicle) => {
 		if (vehicle.type === VEHICLE_TYPES.CAR) {
+			// Front of Vehicle
 			const vehicleHitZone1 = getHitZonPosition(
 				vehicle.vehicle.position,
 				getBotAngle(),
-				false,
 				15
 			);
 
+			// Back of Vehicle
 			const vehicleHitZone2 = getHitZonPosition(
 				vehicle.vehicle.position,
 				getBotAngle(),
-				false,
-				15
+				-15
 			);
 
 			// The player hits another vehicle
