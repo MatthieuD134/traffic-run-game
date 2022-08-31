@@ -11,6 +11,8 @@ function Car(color: THREE.ColorRepresentation) {
 	);
 	backWheel.position.x = -15; // position the backwheel to the back of the car
 	backWheel.position.z = 5; // lift the wheel of half it's depth, otherwize it's half into the ground
+	backWheel.castShadow = true;
+	backWheel.receiveShadow = true;
 	car.add(backWheel);
 
 	const frontWheel = new THREE.Mesh(
@@ -19,6 +21,8 @@ function Car(color: THREE.ColorRepresentation) {
 	);
 	frontWheel.position.x = 15; // position the frontWheel to the back of the car
 	frontWheel.position.z = 5; // lift the wheel of half it's depth, otherwize it's half into the ground
+	frontWheel.castShadow = true;
+	frontWheel.receiveShadow = true;
 	car.add(frontWheel);
 
 	const carBody = new THREE.Mesh(
@@ -27,6 +31,8 @@ function Car(color: THREE.ColorRepresentation) {
 	);
 	carBody.position.z = 7.5 + 5; // half the depth of the body + halfe the depth of the wheel to elevate it more
 	carBody.position.x = 3; // add a bit more length to the front of the car
+	carBody.castShadow = true;
+	carBody.receiveShadow = true;
 	car.add(carBody);
 
 	const carFrontTexture = getCarFrontTexture();
@@ -53,6 +59,8 @@ function Car(color: THREE.ColorRepresentation) {
 	]);
 	carCabin.position.z = 5 + 15 + 6; // combine the offset of the body, the depth of the body and half the depth of the cabin
 	carCabin.position.x = -5; // get the cabin slightly toward the back of the car
+	carCabin.receiveShadow = true;
+	carCabin.castShadow = true;
 	car.add(carCabin);
 
 	// finally return the car Element

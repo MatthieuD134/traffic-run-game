@@ -31,6 +31,8 @@ function renderMap(scene: THREE.Scene, mapWidth: number, mapHeight: number) {
 		map: lineMarkingstexture,
 	});
 	const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+	plane.castShadow = true;
+	plane.receiveShadow = true;
 	scene.add(plane);
 
 	// Extruded geometry
@@ -51,6 +53,9 @@ function renderMap(scene: THREE.Scene, mapWidth: number, mapHeight: number) {
 		new THREE.MeshLambertMaterial({ color: 0x67c240 }),
 		new THREE.MeshLambertMaterial({ color: 0x23311c }),
 	]);
+
+	fieldMesh.receiveShadow = true;
+	fieldMesh.castShadow = true;
 
 	scene.add(fieldMesh);
 }

@@ -49,8 +49,12 @@ function init() {
 	const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 	scene.add(ambientLight);
 
-	const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-	directionalLight.position.set(100, -300, 400);
+	const directionalLight = new THREE.DirectionalLight(0xfff1bc, 1);
+	directionalLight.position.set(100, -300, 300);
+	directionalLight.castShadow = true;
+	directionalLight.target.position.set(0, 0, 0);
+	directionalLight.shadow.bias = 0.0001;
+
 	scene.add(directionalLight);
 
 	// set up the camera
@@ -70,12 +74,24 @@ function init() {
 	camera.up.set(0, 0, 1);
 	camera.lookAt(0, 0, 0);
 
+	directionalLight.shadow.camera = new THREE.OrthographicCamera(
+		cameraWidth / -1, // left
+		cameraWidth / 1, // right
+		cameraHeight / 1, // top
+		cameraHeight / -1, // bottom
+		0, // near plane
+		1000 // far plane
+	);
+
 	// set up the renderer
 	renderer = new THREE.WebGLRenderer({
 		antialias: true,
 		// canvas: document.getElementById('app') as HTMLCanvasElement,
 	});
 	renderer.setSize(screenWidth, screenHeight);
+	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+	renderer.toneMapping = THREE.ACESFilmicToneMapping;
+	renderer.shadowMap.enabled = true;
 
 	document.body.appendChild(renderer.domElement);
 
