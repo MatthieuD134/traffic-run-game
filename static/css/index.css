@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#score-container {
+  font-family: monospace;
+  position: fixed;
+  z-index: 100;
+  bottom: 5vh;
+  width: 300px;
+  left: calc(50vw - 150px);
+  text-align: center;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=index.css.map */
